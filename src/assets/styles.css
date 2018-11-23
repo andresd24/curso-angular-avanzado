@@ -16,3 +16,23 @@ body {
     border-bottom: 3px solid orange;
 
 }
+
+.boton_trancisiones {
+    padding: 10px;
+    background: red;
+    color: white;
+    border-radius: 20px;
+    border: 4px solid blue;
+    transition: all 2s;
+
+}
+
+.boton_trancisiones:hover {
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 2px;
+    background: #ccc;
+    border: 1px solid red;
+
+}

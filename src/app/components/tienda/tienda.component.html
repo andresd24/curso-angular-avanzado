@@ -1,19 +1,16 @@
-<h1>{{titulo}}</h1>
+
+
+
+<a class="boton_trancisiones">Transacciónes</a>
+<hr>
 <ul>
     <li>Camiseta Roja</li>
     <li>Gorra Negra</li>
 </ul>
 Nombre del Parque:
 <input type='text' [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()"/>
-<div *ngIf="miParque">
-<h4>Datos de miParque de mi hijo</h4>
-    <ol>
-        <li>{{miParque.nombre}}</li>
-        <li>{{miParque.metros}}</li>
-        <li>{{miParque.vegetacion}}</li>
-        <li>{{miParque.abierto}}</li>
-    </ol>
-</div>
+
+<hr>
 
 Hijo:
 <p *ngIf="nombreDelParque" >
@@ -21,3 +18,15 @@ Hijo:
             (pasameLosDatos)="verDatosParque($event)"
     ></parque>
 </p>
+<hr>
+
+<div *ngIf="miParque">
+<h4>Datos de miParque de mi hijo</h4>
+    <ol>
+        <li>Nombre: {{miParque.nombre}}</li>
+        <li>Metros: {{miParque.metros}}</li>
+        <li>Vegetación: {{miParque.vegetacion}}</li>
+        <li>Abierto: {{miParque.abierto}}</li>
+    </ol>
+</div>
+        
