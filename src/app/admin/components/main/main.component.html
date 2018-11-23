@@ -1,3 +1,21 @@
-<h3>{{title}}</h3>
+<div class="col-lg-4">
+    <h3>{{title}}</h3>
+    <div class="sidebar-admin" data-example-id="sample-nav-stacked">
+        <ul class="nav nav-pills nav-stacked">
+            <li role="presentation" [routerLinkActive]="['active']">
+                 <a [routerLink] = "['listado']" >Listado</a>   
+            </li>
+            <li role="presentation" [routerLinkActive]="['active']">
+                    <a [routerLink] = "['crear']" >Crear</a>   
+               </li>
+               <li role="presentation" [routerLinkActive]="['active']">
+                    <a [routerLink] = "['editar']">Editar</a>   
+               </li>
+           </ul>
+    </div>
 
-<router-outlet></router-outlet>
+</div>
+
+<div class="col-lg-8">
+    <router-outlet></router-outlet>
+</div>
