@@ -34,7 +34,7 @@ import { HomeComponent } from './components/home/home.component';
     AppRoutingModule,
     FormsModule,
     ModuloemailModule,
-    AdminModule,
+    AdminModule, 
     routing
   ],
   providers: [
