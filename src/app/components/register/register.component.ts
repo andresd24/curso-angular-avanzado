@@ -1,8 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute, Params } from '@angular/router';
+import { Component } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user';
-import { GLOBAL } from '../../services/global';
 import { UserService } from '../../services/user.service';
+
+declare var jQuery: any;
+declare var $:any;
+
 
 @Component({
     selector: 'register',
@@ -10,10 +13,11 @@ import { UserService } from '../../services/user.service';
     providers: [UserService]
 })
 
-export class RegisterComponent implements OnInit {
+export class RegisterComponent {
     public title: String;
     public user: User;
     public status: String;
+    public shown: String;
 
     constructor(
         private _route: ActivatedRoute,
@@ -22,11 +26,8 @@ export class RegisterComponent implements OnInit {
     ) {
         this.title = 'Registro';
         this.user = new User('','','','','','ROLE_USER', '');
+        this.shown = 'false';
     } 
-
-    ngOnInit() {
-        console.log('register component cargado');
-    }
 
     onSubmit() {
         this._userService.register(this.user).subscribe(
@@ -34,14 +35,14 @@ export class RegisterComponent implements OnInit {
                 if (response.user._id) {
                     this.status = 'success';
                     this.user = new User('','','','','','ROLE_USER', '');
+                    this.shown = 'true';
                 }
                 else {
-                    console.log('error');
                     this.status = 'error';
                 }
             },
             error => {
-                console.log(<any>error);
+//                console.log(<any>error);
                 this.status = 'error';
             }
         );
