@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-//import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA }  from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
@@ -20,8 +20,6 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
 
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,11 +37,13 @@ import { LoginComponent } from './components/login/login.component';
     AppRoutingModule,
     FormsModule,
     ModuloemailModule,
-    AdminModule, 
+    AdminModule,
+    HttpModule, 
     routing
   ],
   providers: [
-    appRoutingProviders
+    appRoutingProviders,
+    
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
