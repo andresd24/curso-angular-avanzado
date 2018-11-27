@@ -7,6 +7,8 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class UserService{
     public url: String;
+    public identity;
+    public token;
 
     constructor(private _http: Http) {
         this.url = GLOBAL.url;
@@ -34,5 +36,31 @@ export class UserService{
         return this._http.post(this.url + 'login', params, {headers:headers}).pipe(
             map(res => res.json())
         )
+    }
+
+    get_identity() {
+        let identity = JSON.parse(localStorage.getItem('identity'))
+
+        if (identity != "undefined") {
+            this.identity = identity;
+        }
+        else {
+            this.identity = null;
+        }
+
+        return this.identity;
+    }
+
+    get_token() {
+        let token = JSON.parse(localStorage.getItem('token'))
+
+        if (token != "undefined") {
+            this.token = token;
+        }
+        else {
+            this.token = null;
+        }
+
+        return this.token;
     }
 }

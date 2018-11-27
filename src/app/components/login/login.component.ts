@@ -29,6 +29,8 @@ export class LoginComponent implements OnInit {
 
     ngOnInit() {
         console.log('login component cargado');
+        console.log(localStorage.getItem('identity'));
+        console.log(localStorage.getItem('token'));
     }
 
     onSubmit() {
@@ -37,11 +39,11 @@ export class LoginComponent implements OnInit {
                 this.indentity = response.user;
 
                 if (!this.indentity || !this.indentity._id) {
-                    alert("El usuario no se ha logueado correctamente");
+                    this.status = 'success';            
                 }
                 else {
                     this.indentity.password = '';
-                    console.log(this.indentity);
+                    localStorage.setItem('identity', JSON.stringify(this.indentity))
 
 
                     this._userService.sign_up(this.user, 'true').subscribe(
@@ -52,8 +54,10 @@ export class LoginComponent implements OnInit {
                                 alert("El token no se ha generado");
                             }
                             else {
-                                console.log(this.token);
-                                this.status = 'success';            
+                                localStorage.setItem('token', this.token);
+                                this.status = 'success'; 
+                                
+                                this._router.navigate(['/']);
                             }
             
                         },

@@ -20,6 +20,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,8 +43,7 @@ import { LoginComponent } from './components/login/login.component';
     routing
   ],
   providers: [
-    appRoutingProviders,
-    
+    appRoutingProviders
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
