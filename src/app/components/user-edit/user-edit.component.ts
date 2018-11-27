@@ -27,7 +27,8 @@ export class UserEditComponent implements OnInit {
     }
 
     ngOnInit() {
-        console.log('se ha cargado el componente');
+        //console.log('se ha cargado el componente');
+        this.token = this._userService.get_token();
     }
 
     onSubmit() {
