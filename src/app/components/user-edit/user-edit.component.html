@@ -2,14 +2,14 @@
     <h1>{{title}}</h1>
 
     <div class="alert alert-success" *ngIf="status == 'success'">
-        Registro completado correctamente, <a [routerLink]="['/login']">Ingresa aqui</a>
+        Has actualizado tu información correctamente
     </div>
     
     <div class="alert alert-danger" *ngIf="status == 'error'">
-        No te has registrado correctamente
+        No has actualizado tu información correctamente
     </div>
-    
-    <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-10" autocomplete="false" >
+
+    <form #userEditForm="ngForm" (ngSubmit)="onSubmit()" class="col-lg-10">
         <p>
             <label>Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="user.name" class="form-control" readonly onfocus="this.removeAttribute('readonly')" required />
@@ -31,13 +31,6 @@
                     El email son obligatorio
              </span>
         </p>    
-        <p>
-            <label>Password</label>
-            <input type="password" id="password" readonly onfocus="this.removeAttribute('readonly')" name="password"  #password="ngModel" [(ngModel)]="user.password" class="form-control"  required />
-            <span id="password_span" *ngIf="!password.valid && password.touched && (shown != 'true')">
-                La contraseña no es correcta
-            </span>
-        </p>    
-        <input type="submit" value="{{title}}" class="btn btn-primary"  />
+        <input type="submit" value="{{title}}" class="btn btn-primary" />
     </form>
 </div>
