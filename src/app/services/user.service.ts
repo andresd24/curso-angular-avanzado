@@ -21,4 +21,18 @@ export class UserService{
                 map(res => res.json())
             )
     }
+
+    sign_up(user_to_login, get_token = null) {
+
+        if (get_token != null) {
+            user_to_login.gettoken = get_token;
+        }
+
+        let params = JSON.stringify(user_to_login);
+        let headers = new Headers({'Content-Type': 'application/json'});
+
+        return this._http.post(this.url + 'login', params, {headers:headers}).pipe(
+            map(res => res.json())
+        )
+    }
 }
