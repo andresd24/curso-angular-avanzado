@@ -20,6 +20,9 @@ import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
+// Services
+import { AdminGuard } from './services/admin.guard'; 
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -45,6 +48,8 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     routing
   ],
   providers: [
+    AdminGuard,
+    UserService,
     appRoutingProviders
   ],
   bootstrap: [AppComponent],

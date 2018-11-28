@@ -65,7 +65,6 @@ export class UserService{
     }
 
     update_user(user_to_update) {
-        delete user_to_update.password;
         let params = JSON.stringify(user_to_update);
         let headers = new Headers({
             'Content-Type': 'application/json',
