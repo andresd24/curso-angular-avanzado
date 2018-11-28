@@ -3,11 +3,12 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user';
 import { GLOBAL } from '../../services/global';
 import { UserService } from '../../services/user.service';
+import { UploadService } from '../../services/upload.service';
 
 @Component({
     selector: 'user-edit',
     templateUrl: 'user-edit.component.html',
-    providers: [UserService]
+    providers: [UserService, UploadService]
 })
 
 export class UserEditComponent implements OnInit {
@@ -16,14 +17,18 @@ export class UserEditComponent implements OnInit {
     public identity;
     public token;
     public status: String;
+    public filesToUpload: Array<File>;
+    public url: string;
 
     constructor(
-        private _userService: UserService
+        private _userService: UserService,
+        private _uploadService: UploadService
     ) {
         this.title = "Actualizar mis datos";
         this.identity = this._userService.get_identity();
         this.token = this._userService.get_token();
         this.user = this.identity;
+        this.url = GLOBAL.url;
     }
 
     ngOnInit() {
@@ -40,6 +45,15 @@ export class UserEditComponent implements OnInit {
                 else {
                     localStorage.setItem('identity', JSON.stringify(this.user));
                     this.status = "success";
+
+                    this._uploadService.make_file_request(this.url + 'upload-image-user/' + this.user._id, [], this.filesToUpload, this.token, 'image' )
+                        .then((result: any) => {
+                            this.user.image = result.image;
+                            localStorage.setItem('identity', JSON.stringify(this.user));
+                            console.log(this.user);
+                        }
+                    );
+
                 }
             },
             error => {
@@ -50,6 +64,10 @@ export class UserEditComponent implements OnInit {
                 }
             }
         );
+    }
+
+    fileChangeEvent(fileInput: any) {
+        this.filesToUpload = <Array<File>>fileInput.target.files;
     }
 
 }
