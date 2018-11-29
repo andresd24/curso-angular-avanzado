@@ -13,6 +13,7 @@ import { UploadService } from '../../../services/upload.service';
   templateUrl: './add.component.html',
   providers: [ AnimalService, UserService, UploadService ]
 })
+
 export class AddComponent {
     public title: string;
     public animal: Animal;

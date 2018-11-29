@@ -23,7 +23,6 @@ export class AnimalDetailComponent implements OnInit  {
     }
 
     ngOnInit() {
-        console.log('animal-detail componente cargado');
         this.getAnimal();
     }
 

@@ -38,8 +38,4 @@ export class ListComponent implements OnInit  {
         );
     }
 
-    verAnimal(id) {
-      this._router.navigate(['../animal/' + id]);
-    }
-
 }

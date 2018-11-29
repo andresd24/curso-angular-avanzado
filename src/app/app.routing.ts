@@ -23,6 +23,7 @@ const appRoutes: Routes = [
     {path: 'registro', component: RegisterComponent},
     {path: 'login', component: LoginComponent},
     {path: 'mis-datos', component: UserEditComponent},
+    {path: 'animal/:id', component: AnimalDetailComponent},
     {path: '**', component: HomeComponent}
      
 ];

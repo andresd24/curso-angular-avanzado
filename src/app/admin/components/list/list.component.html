@@ -15,11 +15,11 @@
                 <td>{{animal.year}}</td>
                 <td class="btn-toolbar">
 
-                    <button (click)="verAnimal(animal._id)" class="btn btn-sm btn-success">
-                        <span class="glyphicon glyphicon-eye-open" area-hidden="true"></span>
+                    <button [routerLink]="['/animal', animal._id]" class="btn btn-sm btn-success">
+                            <span class="glyphicon glyphicon-eye-open" area-hidden="true"></span>
                         Ver
                     </button >
-                    <button class="btn btn-sm btn-primary">
+                    <button [routerLink]="['/admin-panel/editar', animal._id]" class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon-pencil" area-hidden="true"></span>
                         Editar
                     </button>
