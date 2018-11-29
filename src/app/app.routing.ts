@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+import { AnimalDetailComponent } from './components/animal-detail/animal-detail.component';
 import { User } from './models/user';
 
 const appRoutes: Routes = [

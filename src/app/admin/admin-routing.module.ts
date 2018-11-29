@@ -5,7 +5,8 @@ import { MainComponent} from './components/main/main.component';
 import { ListComponent} from './components/list/list.component';
 import { AddComponent} from './components/add/add.component';
 import { EditComponent} from './components/edit/edit.component';
-
+import { AnimalDetailComponent } from '../components/animal-detail/animal-detail.component';
+ 
 import { AdminGuard } from '../services/admin.guard';
 
 const adminRoutes: Routes = [
@@ -21,7 +22,7 @@ const adminRoutes: Routes = [
         ]
     },
     {
-        path: 'listado-de-panel', component: ListComponent
+        path: 'animal/:id', component: AnimalDetailComponent,
     }
 ];
 

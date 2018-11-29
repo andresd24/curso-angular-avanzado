@@ -10,15 +10,15 @@
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let n of numbers; let i = index">
-                <td>Oso Panda {{i + 1}}</td>
-                <td>2012</td>
+            <tr *ngFor="let animal of animals">
+                <td>{{animal.name}}</td>
+                <td>{{animal.year}}</td>
                 <td class="btn-toolbar">
 
-                    <button class="btn btn-sm btn-success">
+                    <button (click)="verAnimal(animal._id)" class="btn btn-sm btn-success">
                         <span class="glyphicon glyphicon-eye-open" area-hidden="true"></span>
                         Ver
-                    </button>
+                    </button >
                     <button class="btn btn-sm btn-primary">
                         <span class="glyphicon glyphicon-pencil" area-hidden="true"></span>
                         Editar

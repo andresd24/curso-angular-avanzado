@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 import { map } from 'rxjs/operators';
@@ -23,6 +23,21 @@ export class AnimalService {
             .pipe(
                  map(res => res.json())
             )
+    }
 
+    get_animals() {
+        let headers = new Headers({'Content-Type':'application/json'});
+        let options = new RequestOptions({headers:headers});
+
+        return this._http.get(this.url + 'animals', options)
+            .pipe(
+                map(res => res.json())
+            )
+    }
+
+    get_animal(id) {
+        return this._http.get(this.url + 'animal/' + id).pipe(
+            map(res => res.json())
+        );
     }
 }

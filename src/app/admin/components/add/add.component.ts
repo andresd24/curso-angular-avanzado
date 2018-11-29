@@ -13,7 +13,7 @@ import { UploadService } from '../../../services/upload.service';
   templateUrl: './add.component.html',
   providers: [ AnimalService, UserService, UploadService ]
 })
-export class AddComponent implements OnInit {
+export class AddComponent {
     public title: string;
     public animal: Animal;
     public identity;
@@ -35,10 +35,6 @@ export class AddComponent implements OnInit {
         this.token = this._userService.get_token();
         this.url = GLOBAL.url;
 
-    }
-
-    ngOnInit() {
-        console.log('animal-add ha sido cargado');
     }
 
     onSubmit() {
