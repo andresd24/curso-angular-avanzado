@@ -41,6 +41,10 @@ export class EditComponent implements OnInit {
 
     ngOnInit() {
         this.getAnimal();
+
+        if (this.animal.name == null) {
+
+        }
     }
     
 
@@ -89,7 +93,7 @@ export class EditComponent implements OnInit {
           this._animalService.get_animal(id).subscribe(
               response => {
                   if (!response.animal) {
-                      this._router.navigate(['/']);        
+                    //  this._router.navigate(['/']);        
                   } 
                   else {
                     this.animal = response.animal;
@@ -97,7 +101,7 @@ export class EditComponent implements OnInit {
               },
               error => {
                   console.log(<any>error);
-                  this._router.navigate(['/home']);        
+                  //this._router.navigate(['/home']);        
 
               }        
           );

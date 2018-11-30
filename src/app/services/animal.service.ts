@@ -52,5 +52,18 @@ export class AnimalService {
             map(res => res.json())
         );  
     }
-    
+
+    delete_animal(token, id) {
+        let headers = new Headers({
+            'Content-Type': 'application/json',
+            'Authorization': token
+        });
+
+        let options = new RequestOptions({headers:headers});
+
+        return this._http.delete(this.url + 'animal/' + id, options).pipe(
+            map(res => res.json())
+        );
+    }
+
 }
