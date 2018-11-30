@@ -19,6 +19,7 @@ export class ListComponent implements OnInit  {
     title = 'Listado';
     public animals: Animal[];
     public token: string;
+    public searchTerm;
 
     constructor(
       private _route: ActivatedRoute,

@@ -10,12 +10,15 @@ import { ListComponent} from './components/list/list.component';
 import { AddComponent} from './components/add/add.component';
 import { EditComponent} from './components/edit/edit.component';
 
+import { SearchPipe } from './pipes/search.pipe';
+
 @NgModule({
     declarations: [
         MainComponent,
         ListComponent,
         AddComponent,
-        EditComponent
+        EditComponent,
+        SearchPipe
     ],
     imports: [
         CommonModule,
