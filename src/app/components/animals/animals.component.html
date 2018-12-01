@@ -1,1 +1,17 @@
-<h1>{{title}}</h1>
+<div class="col-lg-12">
+    <h1>{{title}}</h1>
+
+
+    <div class="col-lg-3" *ngFor="let animal of animals">
+        <div class="thumbnail">
+            <div>
+                <img  *ngIf="animal.image" class="animal-image-mask" src="{{ url + 'get-image-animal/' + animal.image }}" alt="{{animal.name}}">
+                <img  *ngIf="!animal.image" src="https://via.placeholder.com/270x200" alt="{{animal.name}}">
+                <div class="caption">
+                    <h3><a [routerLink]="['/animal', animal._id]">{{animal.name}}</a></h3>
+                </div>
+            </div>
+        </div>
+   </div>
+
+</div>
