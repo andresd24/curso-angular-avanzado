@@ -7,6 +7,7 @@ import { routing, appRoutingProviders} from './app.routing';
 
 import { ModuloemailModule} from  './moduloemail/moduloemail.module';
 import { AdminModule } from './admin/admin.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // Components
 import { AppComponent } from './app.component';
@@ -47,6 +48,7 @@ import { UserService } from './services/user.service';
     ModuloemailModule,
     AdminModule,
     HttpModule, 
+    BrowserAnimationsModule,
     routing
   ],
   providers: [

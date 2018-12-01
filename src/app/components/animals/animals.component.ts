@@ -3,11 +3,14 @@ import { AnimalService } from '../../services/animal.service';
 import { Animal } from '../../models/animal';
 import { GLOBAL } from '../../services/global';
 
+import { fadeIn } from '../../components/animation';
+
 
 @Component({
   selector: 'animals',
   templateUrl: './animals.component.html',
-  providers: [ AnimalService ]
+  providers: [ AnimalService ],
+  animations: [ fadeIn ]
 })
 
 export class AnimalsComponent implements OnInit {

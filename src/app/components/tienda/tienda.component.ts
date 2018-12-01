@@ -1,11 +1,14 @@
 import {Component, OnInit } from '@angular/core';
+
+import { fadeIn } from '../../components/animation';
 declare var jQuery: any;
 declare var $:any;
 
 @Component({
     selector: 'tienda',
     templateUrl: './tienda.component.html',
-    styles: ['h1 {color: blue}']
+    styles: ['h1 {color: blue}'],
+    animations: [ fadeIn ]
 })
 
 export class TiendaComponent implements OnInit {

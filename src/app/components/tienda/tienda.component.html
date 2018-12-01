@@ -1,44 +1,47 @@
-<h4>user jquery dentro de angular</h4>
-<button id="botonjq">Mostrar Texto</button>
-<p id="textojq" class="alert alert-warning">
-        Want to save time on your next order and go directly to this step when checking out?
-</p>
+<div class="col-lg-12" [@fadeIn]>
+
+    <h4>user jquery dentro de angular</h4>
+    <button id="botonjq">Mostrar Texto</button>
+    <p id="textojq" class="alert alert-warning">
+            Want to save time on your next order and go directly to this step when checking out?
+    </p>
 
 
-<hr>
+    <hr>
 
-<a class="boton_trancisiones">Transacciónes</a>
+    <a class="boton_trancisiones">Transacciónes</a>
 
-<div class="clearfix">
- 
-<div class="caja_animada">
+    <div class="clearfix">
     
+    <div class="caja_animada">
+        
+    </div>
+    <hr>
+    <ul>
+        <li>Camiseta Roja</li>
+        <li>Gorra Negra</li>
+    </ul>
+    Nombre del Parque:
+    <input type='text' [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()"/>
+
+    <hr>
+
+    Hijo:
+    <p *ngIf="nombreDelParque" >
+        <parque [nombre]="nombreDelParque"
+                (pasameLosDatos)="verDatosParque($event)"
+        ></parque>
+    </p>
+    <hr>
+
+    <div *ngIf="miParque">
+    <h4>Datos de miParque de mi hijo</h4>
+        <ol>
+            <li>Nombre: {{miParque.nombre}}</li>
+            <li>Metros: {{miParque.metros}}</li>
+            <li>Vegetación: {{miParque.vegetacion}}</li>
+            <li>Abierto: {{miParque.abierto}}</li>
+        </ol>
 </div>
-<hr>
-<ul>
-    <li>Camiseta Roja</li>
-    <li>Gorra Negra</li>
-</ul>
-Nombre del Parque:
-<input type='text' [(ngModel)]="nombreDelParque" (keyup)="mostrarNombre()"/>
-
-<hr>
-
-Hijo:
-<p *ngIf="nombreDelParque" >
-    <parque [nombre]="nombreDelParque"
-            (pasameLosDatos)="verDatosParque($event)"
-    ></parque>
-</p>
-<hr>
-
-<div *ngIf="miParque">
-<h4>Datos de miParque de mi hijo</h4>
-    <ol>
-        <li>Nombre: {{miParque.nombre}}</li>
-        <li>Metros: {{miParque.metros}}</li>
-        <li>Vegetación: {{miParque.vegetacion}}</li>
-        <li>Abierto: {{miParque.abierto}}</li>
-    </ol>
 </div>
         

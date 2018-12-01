@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { User } from '../../models/user';
 import { UserService } from '../../services/user.service';
 
+import { fadeIn } from '../../components/animation';
+
 declare var jQuery: any;
 declare var $:any;
 
@@ -10,7 +12,8 @@ declare var $:any;
 @Component({
     selector: 'register',
     templateUrl: './register.component.html',
-    providers: [UserService]
+    providers: [UserService],
+    animations: [ fadeIn ]
 })
 
 export class RegisterComponent {

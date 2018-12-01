@@ -4,10 +4,13 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
 import { User } from 'src/app/models/user';
 import { UserService } from '../../services/user.service';
 
+import { fadeIn } from '../../components/animation';
+
 @Component({
     selector: 'login',
     templateUrl: './login.component.html',
-    providers: [UserService]
+    providers: [UserService],
+    animations: [ fadeIn ]
 })
 
 export class LoginComponent implements OnInit {
