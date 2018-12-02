@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response, Headers } from '@angular/http';
+import { Http, Response, Headers, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs';
 import { GLOBAL } from './global';
 import { map } from 'rxjs/operators';
@@ -74,6 +74,13 @@ export class UserService{
         return this._http.put(this.url + 'update-user/' + user_to_update._id, params, {headers: headers}).pipe(
             map(res => res.json())
         )
+    }
+
+    get_keepers() {
+        return this._http.get(this.url + 'keepers')
+            .pipe(
+                map(res => res.json())
+            )
     }
 
 }
