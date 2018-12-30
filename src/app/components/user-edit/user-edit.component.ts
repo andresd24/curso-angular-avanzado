@@ -37,6 +37,9 @@ export class UserEditComponent implements OnInit {
     }
 
     onSubmit() {
+        delete this.user.password;
+
+        console.log(this.user);
         this._userService.update_user(this.user).subscribe(
             response => {
                 if (!response.user) {

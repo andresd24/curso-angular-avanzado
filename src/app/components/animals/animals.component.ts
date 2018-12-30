@@ -5,6 +5,7 @@ import { GLOBAL } from '../../services/global';
 
 import { fadeIn } from '../../components/animation';
 
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'animals',
